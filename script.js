@@ -51,6 +51,10 @@ form.addEventListener("submit", function (ints) {
 
     const isValidName = /^[A-Za-z\s'-]{2,50}$/.test(fullname);
     const isValidemail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
+    if (!isValidemail) {
+        alert("Please enter a valid email address.");
+        return;
+    }
     const isValidsubject = /^[A-Za-z\s'-]{2,50}$/.test(subject);
     const isValidtextarea =message.trim().length > 0
 
@@ -59,5 +63,34 @@ form.addEventListener("submit", function (ints) {
 
         console.log("submit")
         form.reset()
+    }
+})
+
+let moon=document.querySelector(".moon> :nth-child(2)")
+let sun=document.querySelector(".moon> :nth-child(1)")
+let back=document.querySelector(".back")
+
+let flag = 0
+
+document.querySelector(".moon").addEventListener("click",function(){
+    document.body.classList.toggle("light-mode")
+    if(flag === 0){
+        moon.style.opacity = "0"
+        moon.style.transition = "opacity 1s ease-in-out"
+        sun.style.opacity = "1"
+        document.querySelector(".back img").style.opacity = "0"
+        back.style.backgroundColor = "rgb(245, 245, 245)"
+        document.querySelector(".back img").style.transition = "opacity 1s ease-in-out"
+        flag = 1
+        console.log("sun")
+    }
+    else{
+        moon.style.opacity = "1"
+        sun.style.transition = "opacity 1s ease-in-out"
+        sun.style.opacity = "0"
+        document.querySelector(".back img").style.opacity = "1"
+        document.querySelector(".back img").style.transition = "opacity 1s ease-in-out"
+        flag = 0
+        console.log("moon")
     }
 })
