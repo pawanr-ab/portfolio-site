@@ -10,6 +10,7 @@ https://pawanr-ab.github.io/portfolio-site/
 - CSS3 (with Glassmorphism & animations)
 - JavaScript
 - Responsive Design (Media Queries)
+- Recently I added dark toggle mode
 
 ## 👨‍💻 Created By
 **Pawan Rajput**
